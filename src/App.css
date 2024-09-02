@@ -1,0 +1,164 @@
+body{
+    background: #e6e1c1;
+}
+.balanceBlock{
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    flex-wrap: wrap;
+    width: 150px;
+    height: 100px;
+    justify-content: center;
+    box-shadow: 0 0 25px 5px rgb(0, 0, 0);
+    padding: 8px 20px 0;
+    margin-bottom: 20px;
+    h2{
+        margin-top: 14px;
+        height: 20px;
+    }
+    p{
+        color: green;
+        padding-top: 0;
+        margin-top: 0;
+        padding-bottom: 50px;
+    }
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    padding:30px;
+    .max_block{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    h5{
+        color: white;
+        margin: 10px;
+        border:black 1px solid;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+        min-width: 150px;
+        text-align: center;
+        padding: 10px 5px;
+
+    }
+
+}
+.category_block{
+    display: flex;
+    flex-wrap: nowrap;
+    div{
+        margin: 10px;
+        border:black 1px solid;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 1px rgb(0, 0, 0);
+        min-width: 150px;
+        text-align: center;
+        font-size: 9px;
+        justify-content: center;
+        align-content: center;
+        padding: 10px 5px;
+    }
+}
+.add_profit_block{
+    margin: 20px;
+    display: flex;
+    padding:20px;
+    border-radius: 25px;
+    border: 3px green solid;
+    flex-wrap: wrap;
+*{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+input,select{
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    border: 1px gray solid;
+}
+    button{
+        padding:10px;
+        border: none;
+        box-shadow: 4px 4px 10px 1px rgb(0, 0, 0);
+        background: green;
+        width: 200px;
+        color: white;
+    }
+}
+#add_expense_block{
+    border-color:red;
+
+    button{
+        background: red;
+
+    }
+
+    margin-bottom: -10px;
+}
+.body{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.profits_block{
+    width: 25%;
+    display: flex;
+    border: 1px gray solid;
+    box-shadow: 0 0 25px 5px rgb(0, 0, 0);
+    padding: 15px;
+    min-height: 500px;
+    border-radius: 25px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    overflow: auto;
+    height: 80vh;
+    h1{
+        margin: 20px;
+        color: green;
+    }
+    .profit{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        width: 100%;
+        border-radius: 10px;
+        border: 3px gray solid;
+        height: 50px;
+        margin: 10px;
+        align-items: center;
+        button{
+            background: green;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .salary{
+            color: green;
+        }
+        p{
+            color: gray;
+            font-size: 11px;
+        }
+    }
+    .total{
+        background: green;
+        color:white;
+        height: 25px;
+        padding: 10px;
+        border-radius: 15px;
+        width: 100%;
+    }
+}
+#expenses_block{
+    #expense{
+        height: 70px;
+    }
+    h1,.salary{
+        color: red;
+    }
+    button,.total{
+        background: red;
+    }
+}
