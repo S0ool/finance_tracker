@@ -86,6 +86,7 @@ export default function Body(){
     return(
         <div className={'body'}>
             <Main
+                setCategories={setCategories}
                 profits={profits}
                 expenses={expenses}
                 setMaxProfit={setMaxProfit}

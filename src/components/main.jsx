@@ -16,8 +16,23 @@ function add_time(){
   }
 export default function Main({
                              balance,categories,maxCategory,maxExpense,maxProfit,
-                             setMaxProfit,setMaxExpense,setMaxCategory,
+                             setMaxProfit,setMaxExpense,setMaxCategory,setCategories,
                              setProfits,setExpenses,profits,expenses}){
+    function change_categories(cat_id,cat_max_expense){
+        let new_categories = [...categories]
+        new_categories = new_categories.map((e)=>{
+            if(e.id==cat_id){
+                e.max_expense += cat_max_expense
+                if(e.max_expense>maxCategory){
+                    setMaxCategory(e.max_expense)
+            }
+            }
+            return e
+        })
+        console.log(new_categories)
+        setCategories([...new_categories])
+
+    }
     function draw_options(category){
         return(
             <>
@@ -33,6 +48,9 @@ export default function Main({
                 date:add_time()
             }
         setProfits([...profits,new_profit])
+        if(new_profit.amount>maxProfit){
+            setMaxProfit(new_profit.amount)
+        }
     }
     function add_expenses(event){
         event.preventDefault()
@@ -49,7 +67,13 @@ export default function Main({
                     category:categories.find((e)=>e.id == event.target.elements['category'].value).id
         }
         setExpenses([...expenses,new_expenses])
+        if(new_expenses.amount>maxExpense){
+            setMaxExpense(new_expenses.amount)
+        }
+        change_categories(new_expenses.category,new_expenses.amount)
+
     }
+
 
     return (
         <div className={'main'}>
