@@ -17,7 +17,7 @@ function add_time(){
 export default function Main({
                              balance,categories,maxCategory,maxExpense,maxProfit,
                              setMaxProfit,setMaxExpense,setMaxCategory,setCategories,
-                             setProfits,setExpenses,profits,expenses}){
+                             setProfits,setExpenses,profits,expenses,setBalance}){
     function change_categories(cat_id,cat_max_expense){
         let new_categories = [...categories]
         new_categories = new_categories.map((e)=>{
@@ -51,6 +51,7 @@ export default function Main({
         if(new_profit.amount>maxProfit){
             setMaxProfit(new_profit.amount)
         }
+        setBalance(balance+new_profit.amount)
     }
     function add_expenses(event){
         event.preventDefault()
@@ -71,6 +72,10 @@ export default function Main({
             setMaxExpense(new_expenses.amount)
         }
         change_categories(new_expenses.category,new_expenses.amount)
+        setBalance(balance-new_expenses.amount)
+        if (balance<0){
+            alert('You ')
+        }
 
     }
 
@@ -79,10 +84,12 @@ export default function Main({
         <div className={'main'}>
             <div className={'balanceBlock'}>
                 <h2>My balance💰</h2>
-                <p>{balance}$</p>
+                <p>{balance}$ </p>
+                <p style={{color:'red',fontWeight:'bold'}}>{balance < 0 ? 'Ты в долгах' : ''}</p>
+
             </div>
             <div>
-                <div className={'max_block'}>
+            <div className={'max_block'}>
                     <h5
                         style={{backgroundColor: 'green'}}
                     >MAX PROFIT: {maxProfit}$</h5>

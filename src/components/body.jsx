@@ -99,6 +99,7 @@ export default function Body(){
                 maxProfit={maxProfit}
                 maxExpense={maxExpense}
                 maxCategory={maxCategory}
+                setBalance={setBalance}
             />
             <Profits profits={profits} setProfits={setProfits}/>
             <Expenses expenses={expenses} categories={categories} setExpenses={setExpenses}/>
